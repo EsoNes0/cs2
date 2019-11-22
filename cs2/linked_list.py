@@ -1,23 +1,26 @@
+# -*- coding: utf-8 -*-
+'''Singly linked list implementation
+
+
+Author: Larsen Close
+Version: Completed through extra credit level work with implementation and
+tests for extra methods
+Outline and initial tests provided in class by Professor Dr. Beaty at MSU Denver
+
+
+Todo:
+    * Make runnable from file
+    * Also also use ``sphinx.ext.todo`` extension
+'''
 from __future__ import print_function
-import unittest
-'''
-    Description: Single linked list implementation
-    Author: Larsen Close
-    Version: Completed through extra credit level work with implementation and tests for extra methods
-    Outline and initial tests provided in class by Professor Dr. Beaty at MSU Denver
-'''
-
-''' when run with "-m unittest", the following produces:
-    FAILED (failures=9, errors=2)
-    your task is to fix the failing tests by implementing the necessary
-    methods. '''
 
 
-class LinkedList(object):
-    class Node(object):
+
+class LinkedList():
+    '''Singly linked list class'''
+    class Node():
+        '''Node class for the linked list'''
         # pylint: disable=too-few-public-methods
-        ''' no need for get or set, we only access the values inside the
-            LinkedList class. and really: never have setters. '''
 
         def __init__(self, value, next_node):
             self.value = value
@@ -30,6 +33,7 @@ class LinkedList(object):
                 self.push_front(x)
 
     def empty(self):
+        '''empty method for linked list returns empty list'''
         return self.front == self.back is None
 
     def __iter__(self):
@@ -45,15 +49,15 @@ class LinkedList(object):
             raise StopIteration()
 
     def push_front(self, value):
+        '''push front method for linked list, takes value pushes onto front'''
         new = self.Node(value, self.front)
         if self.empty():
             self.front = self.back = new
         else:
             self.front = new
 
-    ''' you need to(at least) implement the following three methods'''
-
     def pop_front(self):
+        '''pop front method for linked list, removes value from list front'''
         if self.empty():
             raise RuntimeError("Empty List")
         tmp = self.front.value
@@ -65,6 +69,7 @@ class LinkedList(object):
             return tmp
 
     def push_back(self, value):
+        '''push back method for linked list, takes value pushes onto back'''
         new = self.Node(value, None)
         if self.empty():
             self.front = self.back = new
@@ -73,6 +78,7 @@ class LinkedList(object):
             self.back = new
 
     def pop_back(self):
+        '''pop back method for linked list, removes value from list back'''
         if self.empty():
             raise RuntimeError("Empty List")
         tmp = self.back.value
@@ -100,6 +106,7 @@ class LinkedList(object):
         return 'LinkedList((' + str(self) + '))'
 
     def delete_value(self, value):
+        '''delete method for linked list, removes value from list'''
         previous = None
         current = self.front
         if (self.front == self.back is not None) and (
@@ -124,6 +131,7 @@ class LinkedList(object):
             raise RuntimeError("Value not present")
 
     def find_mid(self):
+        '''find mid method for linked list, returns list middle'''
         if self.empty():
             raise RuntimeError("list empty")
         fast = self.front
@@ -132,7 +140,3 @@ class LinkedList(object):
             fast = fast.next_node.next_node
             slow = slow.next_node
         return slow.value
-
-
-if '__main__' == __name__:
-    unittest.main()
