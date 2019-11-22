@@ -42,5 +42,4 @@ def findandreplace(find, replace, string):
         return string
     if find and string[:a] == find:
         return replace + findandreplace(find, replace, string[a:])
-    else:
-        return string[0] + findandreplace(find, replace, string[1:])
+    return string[0] + findandreplace(find, replace, string[1:])

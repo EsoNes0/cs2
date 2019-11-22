@@ -1,17 +1,23 @@
-'''
-    Description: Chained Dictionary with doubling and halving
-    Author: Larsen Close
-    Version: Completed through extra credit with several extra methods implemented with tests
-    Outline and initial tests provided in class by Professor Dr. Beaty at MSU Denver
-'''
+# -*- coding: utf-8 -*-
+'''Chained Dictionary with doubling and halving
 
-'''
-    Implement a dictionary using chaining.
-    You may assume every key has a hash() method, e.g.:
-    >>> hash(1)
-    1
-    >>> hash('hello world')
-    -2324238377118044897
+
+Implement a dictionary using chaining.
+You may assume every key has a hash() method, e.g.:
+>>> hash(1)
+1
+>>> hash('hello world')
+-2324238377118044897
+
+Author: Larsen Close
+Version: Completed through extra credit with several extra methods implemented
+with tests
+Outline and initial tests provided in class by Professor Dr. Beaty at MSU Denver
+
+
+Todo:
+    * Make runnable from file
+    * Also also use ``sphinx.ext.todo`` extension
 '''
 
 
