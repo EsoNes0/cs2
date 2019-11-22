@@ -45,8 +45,7 @@ class LinkedList():
             tmp = self.current.value
             self.current = self.current.next_node
             return tmp
-        else:
-            raise StopIteration()
+        raise StopIteration()
 
     def push_front(self, value):
         '''push front method for linked list, takes value pushes onto front'''
@@ -64,9 +63,8 @@ class LinkedList():
         if self.front == self.back is not None:
             self.front = self.back = None
             return tmp
-        else:
-            self.front = self.front.next_node
-            return tmp
+        self.front = self.front.next_node
+        return tmp
 
     def push_back(self, value):
         '''push back method for linked list, takes value pushes onto back'''
@@ -87,13 +85,12 @@ class LinkedList():
         if self.front == self.back is not None:
             self.front = self.back = None
             return tmp
-        else:
-            while current.next_node is not None:
-                previous = current
-                current = current.next_node
-            self.back = previous
-            self.back.next_node = None
-            return tmp
+        while current.next_node is not None:
+            previous = current
+            current = current.next_node
+        self.back = previous
+        self.back.next_node = None
+        return tmp
 
     def __str__(self):
         tmp = ""
@@ -122,13 +119,11 @@ class LinkedList():
                 if current == self.back:
                     self.back = previous
                     return
-                elif previous:
-                    previous.next_node = current.next_node
-                    return
+                previous.next_node = current.next_node
+                return
             previous = current
             current = current.next_node
-        else:
-            raise RuntimeError("Value not present")
+        raise RuntimeError("Value not present")
 
     def find_mid(self):
         '''find mid method for linked list, returns list middle'''
