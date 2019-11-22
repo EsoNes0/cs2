@@ -1,18 +1,21 @@
+# -*- coding: utf-8 -*-
+'''Recursive find and replace of string variables
 
 
-'''
-    Description: Recursive find and replace of string variables
-    Author: Larsen Close
-    Version: Completed through A level work
-    Outline and initial tests provided in class by Professor Dr. Beaty at MSU Denver
-'''
+A recursive method that takes 1) a string to find, 2) a string to replace
+the found string with, and 3) an initial string. Return the initial string with
+all the found strings replaced with the replacement string. Without using loops
+or the built-in string methods except comparison, length, and slicing.
 
-'''
-    Write a recursive method that takes 1) a string to find, 2) a string to replace
-    the found string with, and 3) an initial string. Return the initial string with
-    all the found strings replaced with the replacement string. You may not use loops
-    or the built-in string methods except comparison, length, and slicing. Here is an
-    outline.
+
+Author: Larsen Close
+Version: Completed through A level work
+Outline and initial tests provided in class by Professor Dr. Beaty at MSU Denver
+
+
+Todo:
+    * Make runnable from file
+    * Also also use ``sphinx.ext.todo`` extension
 '''
 
 
