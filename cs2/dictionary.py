@@ -34,11 +34,12 @@ class Dictionary:
 
     def __len__(self):
         self.__count = 0
-        for i in self.__iter__():
+        for _ in self.__iter__():
             self.__count += 1
         return self.__count
 
     def flattened(self):
+        """dictionary method for flattening the dict"""
         return [item for inner in self.__items for item in inner]
 
     def __iter__(self):
@@ -77,8 +78,8 @@ class Dictionary:
         data = iter(self)
         self.__limit *= 2
         self.__items = [[] for _ in range(self.__limit)]
-        for d in data:
-            self.__setitem__(d[0], d[1])
+        for datum in data:
+            self.__setitem__(datum[0], datum[1])
 
     def __delitem__(self, key):
         list_number = hash(key) % self.__limit
@@ -97,8 +98,8 @@ class Dictionary:
         data = iter(self)
         self.__limit = int(self.__limit / 2)
         self.__items = [[] for _ in range(self.__limit)]
-        for d in data:
-            self.__setitem__(d[0], d[1])
+        for datum in data:
+            self.__setitem__(datum[0], datum[1])
 
     def __keys__(self):
         keys = []
@@ -117,10 +118,7 @@ class Dictionary:
         values1 = self.__values__()
         keys2 = value.__keys__()
         values2 = value.__values__()
-        if keys1 == keys2 and values1 == values2:
-            return True
-        else:
-            return False
+        return bool(keys1 == keys2 and values1 == values2)
 
     def __items__(self):
         tmp = []
