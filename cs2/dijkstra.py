@@ -117,7 +117,7 @@ class WeightedDigraph:
         if not self.__directed:
             to_node.add_edge(self._edge(from_node, weight))
 
-    def remove_edge(self, from_value, to_value, weight):
+    def remove_edge(self, from_value, to_value):
         '''remove edge method for weighted digraph class'''
         from_node = self.find(from_value)
         to_node = self.find(to_value)
