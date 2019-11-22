@@ -5,7 +5,8 @@
 Author: Larsen Close
 Version: Completed through extra credit level work with implementation and
 tests for extra methods
-Outline and initial tests provided in class by Professor Dr. Beaty at MSU Denver
+Outline and initial tests provided in class by Professor Dr. Beaty at
+MSU Denver
 
 
 Todo:
@@ -13,7 +14,6 @@ Todo:
     * Also also use ``sphinx.ext.todo`` extension
 '''
 from __future__ import print_function
-
 
 
 class LinkedList():

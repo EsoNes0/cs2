@@ -10,7 +10,8 @@ or the built-in string methods except comparison, length, and slicing.
 
 Author: Larsen Close
 Version: Completed through A level work
-Outline and initial tests provided in class by Professor Dr. Beaty at MSU Denver
+Outline and initial tests provided in class by Professor Dr. Beaty at
+MSU Denver
 
 
 Todo:

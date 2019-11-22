@@ -12,7 +12,8 @@ You may assume every key has a hash() method, e.g.:
 Author: Larsen Close
 Version: Completed through extra credit with several extra methods implemented
 with tests
-Outline and initial tests provided in class by Professor Dr. Beaty at MSU Denver
+Outline and initial tests provided in class by Professor Dr. Beaty at
+MSU Denver
 
 
 Todo:
