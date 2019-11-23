@@ -149,14 +149,18 @@ class WeightedDigraph:
     def dijkstra(self, start):
         '''dijkstras implementation'''
 
-        if not self:
-            raise RuntimeError("no graph")
+        def _dijkstra_no_graph(self):
+            if not self:
+                raise RuntimeError("no graph")
 
-        if len(self) == 1:
-            for node in self:
-                node.distance = 0
-                node.previous = None
-                return False
+        def _dijkstra_len_one(self):
+            if len(self) == 1:
+                for node in self:
+                    node.distance = 0
+                    node.previous = None
+
+        _dijkstra_len_one(self)
+        _dijkstra_no_graph(self)
 
         self.infandnone()
         source = self.find(start)
@@ -169,27 +173,31 @@ class WeightedDigraph:
 
         result = []
 
-        while todo:
+        def _dijkstra_todo():
+            while todo:
 
-            smallest = float("inf")
+                smallest = float("inf")
 
-            for node in todo:
+                for node in todo:
 
-                if node.distance < smallest:
-                    _min = node
-                    smallest = node.distance
+                    if node.distance < smallest:
+                        _min = node
+                        smallest = node.distance
 
-            todo.remove(_min)
-            result.append([_min.distance, _min.value])
+                todo.remove(_min)
+                result.append([_min.distance, _min.value])
 
-            for edge in _min.edges:
-                alt = _min.distance + edge.weight
+                for edge in _min.edges:
+                    alt = _min.distance + edge.weight
 
-                if alt < edge.to_node.distance:
-                    edge.to_node.distance = alt
-                    edge.to_node.previous = _min
+                    if alt < edge.to_node.distance:
+                        edge.to_node.distance = alt
+                        edge.to_node.previous = _min
 
-                    todo.add(edge.to_node)
+                        todo.add(edge.to_node)
+
+        _dijkstra_todo()
+
 
         for item in result:
             item.extend(self.track_previous(item[1]))
