@@ -198,7 +198,6 @@ class WeightedDigraph:
 
         _dijkstra_todo()
 
-
         for item in result:
             item.extend(self.track_previous(item[1]))
 
