@@ -13,14 +13,13 @@ Todo:
     * Make runnable from file
     * Also also use ``sphinx.ext.todo`` extension
 '''
-from __future__ import print_function
+
 
 
 class LinkedList():
     '''Singly linked list class'''
     class Node():
         '''Node class for the linked list'''
-        # pylint: disable=too-few-public-methods
 
         def __init__(self, value, next_node):
             self.value = value

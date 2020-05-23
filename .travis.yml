@@ -16,10 +16,10 @@ install:
   - pip install -r requirements-dev.txt codecov
 
 script:
-  - pylint cs2 tests
-  - flake8 cs2 tests
+  - pylint data_structs tests
+  - flake8 data_structs tests
   - coverage erase
-  - coverage run --branch --source=cs2 -m pytest
+  - coverage run --branch --source=data_structs -m pytest
   - coverage report -m
   
 after_success:

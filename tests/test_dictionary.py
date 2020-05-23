@@ -2,16 +2,13 @@
 """Basic tests for chained dictionary"""
 
 import unittest
-from cs2.dictionary import Dictionary as dictionary
-# pylint: disable=invalid-name
-# pylint: disable=pointless-string-statement
-# pylint: disable=missing-class-docstring
+from data_structs.dictionary import Dictionary 
 
 
 class test_add_two(unittest.TestCase):
     def test(self):
         """Dictionary test method"""
-        s = dictionary()
+        s = Dictionary()
         s[1] = "one"
         s[2] = "two"
         self.assertEqual(len(s), 2)
@@ -22,7 +19,7 @@ class test_add_two(unittest.TestCase):
 class test_add_twice(unittest.TestCase):
     def test(self):
         """Dictionary test method"""
-        s = dictionary()
+        s = Dictionary()
         s[1] = "one"
         s[1] = "one"
         self.assertEqual(len(s), 1)
@@ -32,7 +29,7 @@ class test_add_twice(unittest.TestCase):
 class test_store_false(unittest.TestCase):
     def test(self):
         """Dictionary test method"""
-        s = dictionary()
+        s = Dictionary()
         s[1] = False
         self.assertTrue(1 in s)
         self.assertFalse(s[1])
@@ -41,7 +38,7 @@ class test_store_false(unittest.TestCase):
 class test_store_none(unittest.TestCase):
     def test(self):
         """Dictionary test method"""
-        s = dictionary()
+        s = Dictionary()
         s[1] = None
         self.assertTrue(1 in s)
         self.assertEqual(s[1], None)
@@ -50,7 +47,7 @@ class test_store_none(unittest.TestCase):
 class test_none_key(unittest.TestCase):
     def test(self):
         """Dictionary test method"""
-        s = dictionary()
+        s = Dictionary()
         s[None] = 1
         self.assertTrue(None in s)
         self.assertEqual(s[None], 1)
@@ -59,7 +56,7 @@ class test_none_key(unittest.TestCase):
 class test_False_key(unittest.TestCase):
     def test(self):
         """Dictionary test method"""
-        s = dictionary()
+        s = Dictionary()
         s[False] = 1
         self.assertTrue(False in s)
         self.assertEqual(s[False], 1)
@@ -68,7 +65,7 @@ class test_False_key(unittest.TestCase):
 class test_collide(unittest.TestCase):
     def test(self):
         """Dictionary test method"""
-        s = dictionary()
+        s = Dictionary()
         s[0] = "zero"
         s[10] = "ten"
         self.assertEqual(len(s), 2)
@@ -79,7 +76,7 @@ class test_collide(unittest.TestCase):
 class test_double(unittest.TestCase):
     def test(self):
         """Dictionary test method"""
-        s = dictionary()
+        s = Dictionary()
         for i in range(11):
             s[i] = str(i)
         self.assertEqual(len(s), 11)
@@ -92,7 +89,7 @@ class test_double(unittest.TestCase):
 class test_double_second(unittest.TestCase):
     def test(self):
         """Dictionary test method"""
-        s = dictionary()
+        s = Dictionary()
         for i in range(41):
             s[i] = str(i)
         self.assertEqual(len(s), 41)
@@ -110,7 +107,7 @@ class test_double_second(unittest.TestCase):
 class test_delitem(unittest.TestCase):
     def test(self):
         """Dictionary test method"""
-        s = dictionary()
+        s = Dictionary()
         s[1] = "one"
         s[2] = "two"
         s[3] = "three"
@@ -133,7 +130,7 @@ class test_delitem(unittest.TestCase):
 class test_delitem_no_key(unittest.TestCase):
     def test(self):
         """Dictionary test method"""
-        s = dictionary()
+        s = Dictionary()
         s[1] = "one"
         s[2] = "two"
         s[3] = "three"
@@ -145,7 +142,7 @@ class test_delitem_no_key(unittest.TestCase):
 class test_half(unittest.TestCase):
     def test(self):
         """Dictionary test method"""
-        s = dictionary()
+        s = Dictionary()
         for i in range(11):
             s[i] = str(i)
         self.assertEqual(len(s), 11)
@@ -169,7 +166,7 @@ class test_half(unittest.TestCase):
 class test_half_second(unittest.TestCase):
     def test(self):
         """Dictionary test method"""
-        s = dictionary()
+        s = Dictionary()
         for i in range(41):
             s[i] = str(i)
         self.assertEqual(len(s), 41)
@@ -203,14 +200,14 @@ class test_half_second(unittest.TestCase):
 class test_keys_empty(unittest.TestCase):
     def test(self):
         """Dictionary test method"""
-        s = dictionary()
+        s = Dictionary()
         self.assertEqual(s.__keys__(), [])
 
 
 class test_keys(unittest.TestCase):
     def test(self):
         """Dictionary test method"""
-        s = dictionary()
+        s = Dictionary()
         s[1] = "one"
         s[2] = "two"
         s[3] = "three"
@@ -222,7 +219,7 @@ class test_keys(unittest.TestCase):
 class test_keys_long(unittest.TestCase):
     def test(self):
         """Dictionary test method"""
-        s = dictionary()
+        s = Dictionary()
         for i in range(41):
             s[i] = str(i)
         self.assertEqual(s.__keys__(),
@@ -272,7 +269,7 @@ class test_keys_long(unittest.TestCase):
 class test_values(unittest.TestCase):
     def test(self):
         """Dictionary test method"""
-        s = dictionary()
+        s = Dictionary()
         s[1] = "one"
         s[2] = "two"
         s[3] = "three"
@@ -285,7 +282,7 @@ class test_values(unittest.TestCase):
 class test_values_long(unittest.TestCase):
     def test(self):
         """Dictionary test method"""
-        s = dictionary()
+        s = Dictionary()
         for i in range(21):
             s[i] = str(i)
         self.assertEqual(s.__values__(),
@@ -315,20 +312,20 @@ class test_values_long(unittest.TestCase):
 class test_values_empty(unittest.TestCase):
     def test(self):
         """Dictionary test method"""
-        s = dictionary()
+        s = Dictionary()
         self.assertEqual(s.__values__(), [])
 
 
 class test_eq(unittest.TestCase):
     def test(self):
         """Dictionary test method"""
-        s = dictionary()
+        s = Dictionary()
         s[1] = "one"
         s[2] = "two"
         s[3] = "three"
         s[4] = "four"
         s[5] = "five"
-        r = dictionary()
+        r = Dictionary()
         r[1] = "one"
         r[2] = "two"
         r[3] = "three"
@@ -340,12 +337,12 @@ class test_eq(unittest.TestCase):
 class test_not_eq(unittest.TestCase):
     def test(self):
         """Dictionary test method"""
-        s = dictionary()
+        s = Dictionary()
         s[1] = "one"
         s[2] = "two"
         s[3] = "three"
         s[4] = "four"
-        r = dictionary()
+        r = Dictionary()
         r[1] = "one"
         r[2] = "two"
         r[3] = "three"
@@ -357,25 +354,25 @@ class test_not_eq(unittest.TestCase):
 class test_eq_empty(unittest.TestCase):
     def test(self):
         """Dictionary test method"""
-        s = dictionary()
-        r = dictionary()
+        s = Dictionary()
+        r = Dictionary()
         self.assertTrue(s.__eq__(r))
 
 
 class test_eq_one_empty(unittest.TestCase):
     def test(self):
         """Dictionary test method"""
-        s = dictionary()
+        s = Dictionary()
         s[1] = "one"
-        r = dictionary()
+        r = Dictionary()
         self.assertFalse(s.__eq__(r))
 
 
 class test_eq_one_empty_other(unittest.TestCase):
     def test(self):
         """Dictionary test method"""
-        s = dictionary()
-        r = dictionary()
+        s = Dictionary()
+        r = Dictionary()
         r[1] = "one"
         self.assertFalse(s.__eq__(r))
 
@@ -383,7 +380,7 @@ class test_eq_one_empty_other(unittest.TestCase):
 class test_items(unittest.TestCase):
     def test(self):
         """Dictionary test method"""
-        s = dictionary()
+        s = Dictionary()
         s[1] = "one"
         s[2] = "two"
         s[3] = "three"
@@ -398,14 +395,14 @@ class test_items(unittest.TestCase):
 class test_items_empty(unittest.TestCase):
     def test(self):
         """Dictionary test method"""
-        s = dictionary()
+        s = Dictionary()
         self.assertEqual(s.__items__(), [])
 
 
 class test_items_large(unittest.TestCase):
     def test(self):
         """Dictionary test method"""
-        s = dictionary()
+        s = Dictionary()
         for i in range(41):
             s[i] = str(i)
         self.assertEqual(

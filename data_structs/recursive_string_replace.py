@@ -14,9 +14,6 @@ Outline and initial tests provided in class by Professor Dr. Beaty at
 MSU Denver
 
 
-Todo:
-    * Make runnable from file
-    * Also also use ``sphinx.ext.todo`` extension
 '''
 
 

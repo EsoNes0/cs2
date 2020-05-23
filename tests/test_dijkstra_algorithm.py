@@ -3,9 +3,7 @@
 
 
 import unittest
-from cs2.dijkstra import WeightedDigraph, TRACK_PREVIOUS
-# pylint: disable=invalid-name
-# pylint: disable=no-value-for-parameter
+from data_structs.dijkstra import WeightedDigraph, TRACK_PREVIOUS
 
 
 class test_WeightedDigraph(unittest.TestCase):
