@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 """Basic tests for chained dictionary"""
 
 import unittest
-from data_structs.dictionary import Dictionary 
+from structures.dictionary import Dictionary
 
 
 class test_add_two(unittest.TestCase):

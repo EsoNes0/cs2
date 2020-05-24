@@ -2,7 +2,10 @@
 """Basic tests for recurive string replacement """
 
 import unittest
-from data_structs.recursive_string_replace import findandreplace
+from structures.recursive_string_replace import findandreplace
+# pylint: disable=invalid-name
+# pylint: disable=pointless-string-statement
+# pylint: disable=missing-class-docstring
 
 
 class TestFindAndReplace(unittest.TestCase):
