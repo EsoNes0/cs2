@@ -66,7 +66,7 @@ class BinaryTree():
 
         next_highest = self.next_highest()
 
-        self.remove(next_highest)
+        self.remove(next_highest.value)
 
         next_highest.left = self.left
         next_highest.right = self.right
