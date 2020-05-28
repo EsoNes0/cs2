@@ -139,7 +139,13 @@ disable=print-statement,
         deprecated-sys-function,
         exception-escape,
         comprehension-escape,
-        too-few-public-methods
+        too-few-public-methods,
+        invalid-name,
+        missing-class-docstring,
+        no-self-use,
+        pointless-string-statement,
+        no-value-for-parameter,
+        missing-function-docstring
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option
@@ -572,3 +578,5 @@ min-public-methods=2
 # "BaseException, Exception".
 overgeneral-exceptions=BaseException,
                        Exception
+
+

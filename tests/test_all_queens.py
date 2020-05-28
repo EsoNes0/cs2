@@ -3,7 +3,6 @@
 
 import unittest
 from structures.all_queens import AllQueens
-# pylint: disable=invalid-name
 
 
 class Test_Safe(unittest.TestCase):
@@ -29,31 +28,28 @@ class Test_Safe(unittest.TestCase):
         queen = AllQueens()
         self.assertFalse(queen.safe(1, 1, 5, 5))
 
+
 class test_all_safe(unittest.TestCase):
-    
+
     def test_no_placed(self):
         queen = AllQueens()
         self.assertTrue(queen.all_safe(1, 1, []))
-    
+
     def test_one_placed_unsafe(self):
         queen = AllQueens()
         self.assertFalse(queen.all_safe(1, 1, [(1, 1)]))
-    
+
     def test_one_placed_safe(self):
         queen = AllQueens()
         self.assertTrue(queen.all_safe(1, 1, [[2, 3]]))
-    
+
     def test_multiple_unsafe(self):
         queen = AllQueens()
         self.assertFalse(queen.all_safe(1, 1, [(2, 3), (5, 5)]))
-    
+
     def test_multiple_safe(self):
         queen = AllQueens()
         self.assertTrue(queen.all_safe(1, 1, [(2, 3), (4, 5)]))
-        
-    # def test_multiple_safe_specific(self):
-    #     queen = AllQueens()
-    #     self.assertTrue(queen.all_safe(7, 7, [(0, 0), (1, 2), (2, 4), (3, 1), (4, 3)]))
 
 
 class test_one(unittest.TestCase):
@@ -77,19 +73,21 @@ class test_one(unittest.TestCase):
 
 
 class test_all(unittest.TestCase):
-    
+
     def test_one_all(self):
         queen = AllQueens()
         self.assertEqual(queen.solve_all(1, 0, [], []), [[(0, 0)]])
+
     def test_two_all(self):
         queen = AllQueens()
         self.assertEqual(queen.solve_all(2, 0, [], []), [])
+
     def test_three_all(self):
         queen = AllQueens()
         self.assertEqual(queen.solve_all(3, 0, [], []), [])
+
     def test_four_all(self):
         queen = AllQueens()
         solutions = queen.solve_all(4, 0, [], [])
-        self.assertEqual(solutions, [[(0, 1), (1, 3), (2, 0), (3, 2)], \
-            [(0, 2), (1, 0), (2, 3), (3, 1)]])
-
+        self.assertEqual(solutions, [[(0, 1), (1, 3), (2, 0), (3, 2)],
+                                     [(0, 2), (1, 0), (2, 3), (3, 1)]])

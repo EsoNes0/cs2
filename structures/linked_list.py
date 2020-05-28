@@ -15,7 +15,6 @@ Todo:
 '''
 
 
-
 class LinkedList():
     '''Singly linked list class'''
     class Node():

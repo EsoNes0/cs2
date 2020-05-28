@@ -30,7 +30,7 @@ class WeightedDigraph:
             resultant = str(self.value)
             for edge in self.edges:
                 resultant += "->" + str(edge.to_node.value) + \
-                          "(" + str(edge.weight) + ")"
+                    "(" + str(edge.weight) + ")"
             return resultant
 
         def add_edge(self, new_edge):
