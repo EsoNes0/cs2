@@ -2,7 +2,8 @@
     Description: Eight queens puzzle
     Author: Larsen Close
     Version: In progress
-    Outline and initial tests provided in class by Professor Dr. Beaty at MSU Denver
+    Outline and initial tests provided in class by
+    Professor Dr. Beaty at MSU Denver.
 
     The eight queens puzzle is the problem of placing eight chess queens on
     an 8×8 chessboard so that no two queens threaten each other. Thus, a
@@ -20,20 +21,19 @@ from sys import argv
 # start with solving this
 SOLVE_ONE = True
 # then worry about this if you have time
-SOLVE_ALL = False
+SOLVE_ALL = True
 
 
 class AllQueens:
     """Class for the all queens problem"""
 
-
-
     def safe(self, x_1=0, y_1=0, x_2=0, y_2=0):
-        """AllQueens function for safe placements"""
+        """AllQueens method to check single safe placement"""
         return not (x_1 == x_2 or y_1 == y_2 or abs(x_2 - x_1) == abs(y_2 - y_1))
 
     def all_safe(self, row, col, placed):
-        if not placed:
+        """AllQueens method to check safety against all placements"""
+        if not placed or placed == []:
             return True
         for i in placed:
             if not self.safe(row, col, i[0], i[1]):
@@ -45,9 +45,9 @@ class AllQueens:
         length = SIZE
         print('-' * length)
 
-        a = [[' Q ' if (i, j) in solution else ' . '
-            for j in range(length)]
-            for i in range(length)]
+        a = [[' Q ' if (i, j) in solution else ' ~ '
+              for j in range(length)]
+             for i in range(length)]
         for i in a:
             print(''.join(i))
 
@@ -61,92 +61,45 @@ class AllQueens:
     # '''
 
     def solve_one(self, size, row, placed):
-        # if we're past the last row, return placed as it has the answer.
-        # for each column
-        # see if placing a queen at row and column is safe from all placed
-        # queens.
-        # if it is safe
-        # make a recursive call with the next row and placed + (row, column)
-        # if there was a solution with those parameters, return it.
-        # return the empty list
+        """
+        Function to find one solution the the n queens problem and return it
+        """
 
-
-
-        if row == size:
+        if row >= size:
             return placed
+
         for col in range(0, size):
-            if placed == []:
-                return self.solve_one(size, row + 1, placed + [(row, col)])
             if self.all_safe(row, col, placed):
-                return self.solve_one(size, row + 1, placed + [(row, col)])
-            
-        if len(placed) == size:
-            return  placed
-
-            
-        return self.solve_one(size, row, [(row + 1, 1)])
-        
-        
-
-
-    def new_solution(self, row, col, solutions):
-        if solutions == []:
-            return True
-        for solution in solutions:
-            if row == solution[0] and col == solution[1]:
-                return False
-        return True
-            
-        
-
-
+                placed = self.solve_one(size, row + 1, placed + [(row, col)])
+                if len(placed) == size:
+                    return placed
+        return []
 
     def solve_all(self, size, row, placed, solutions):
         """
         Function like solve one but accumulate all the solutions in the last
         argument.
         """
-        
-        for r in range(size):
-            for c in range(size):
-                if len(self.solve_one(size, row + 1, placed + [(r, c)])) == size:
-                    solutions += self.solve_one(size, row + 1, placed + [(r, c)])
-        
+
+        if row >= size:
+            solutions += [placed]
+            return solutions
+
+        for col in range(0, size):
+            if self.all_safe(row, col, placed):
+                solutions = self.solve_all(
+                    size, row + 1, placed + [(row, col)], solutions)
+                if len(placed) == size:
+                    return solutions
         return solutions
-        
-        
-
-        # if len(placed) == size:
-        #     return self.solve_all(size, row, [], solutions + (placed))
-        # if row == size:
-        #     return placed
-        
-        # for col in range(0, size):
-        #     if placed == []:
-        #         if self.new_solution(row, col, solutions):
-        #             return self.solve_all(size, row + 1, placed + [(row, col)], solutions)
-                
-        #     if self.all_safe(row, col, placed):
-        #         if self.new_solution(row, col, solutions):
-        #             return self.solve_all(size, row + 1, placed + [(row, col)], solutions)
-        
-        # return solutions + (placed)             #self.solve_all(size, row, [], solutions + placed)
-
-
-      
-
-
-
 
 
 if __name__ == "__main__":
-    SIZE = 8 if len(argv) == 1 else int(argv[1])
-
+    SIZE = 3 if len(argv) == 1 else int(argv[1])
 
     if SOLVE_ONE:
         queen = AllQueens()
         queen.print_board(queen.solve_one(SIZE, 0, []))
-
 
     if SOLVE_ALL:
         queens = AllQueens()

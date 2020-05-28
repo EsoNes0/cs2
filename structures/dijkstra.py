@@ -1,13 +1,6 @@
 # -*- coding: utf-8 -*-
 '''Dijkstra's algorithm implementation
 
-
-A recursive method that takes 1) a string to find, 2) a string to replace
-the found string with, and 3) an initial string. Return the initial string with
-all the found strings replaced with the replacement string. Without using loops
-or the built-in string methods except comparison, length, and slicing.
-
-
 Author: Larsen Close
 Version: Completed through A level work
 Outline and initial tests provided in class by Professor Dr. Beaty at
