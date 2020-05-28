@@ -18,9 +18,9 @@
 from sys import argv
 
 
-# start with solving this
+# runs method to find one solution
 SOLVE_ONE = True
-# then worry about this if you have time
+# runs method to find all solutions
 SOLVE_ALL = True
 
 
@@ -29,7 +29,12 @@ class AllQueens:
 
     def safe(self, x_1=0, y_1=0, x_2=0, y_2=0):
         """AllQueens method to check single safe placement"""
-        return not (x_1 == x_2 or y_1 == y_2 or abs(x_2 - x_1) == abs(y_2 - y_1))
+        return not (
+            x_1 == x_2 or y_1 == y_2 or abs(
+                x_2 -
+                x_1) == abs(
+                y_2 -
+                y_1))
 
     def all_safe(self, row, col, placed):
         """AllQueens method to check safety against all placements"""
@@ -53,13 +58,6 @@ class AllQueens:
 
         print('-' * length)
 
-    # '''
-    #     size is the overall size of the problem we're solving.
-    #     row is the row we're currently on, starting with 0.
-    #     placed is a list of queens -- a list of tuples with (x,y) -- that
-    #         have already been placed on the board.
-    # '''
-
     def solve_one(self, size, row, placed):
         """
         Function to find one solution the the n queens problem and return it
@@ -73,7 +71,7 @@ class AllQueens:
                 solution = self.solve_one(size, row + 1, placed + [(row, col)])
                 if len(solution) == size:
                     return solution
-                
+
         return []
 
     def solve_all(self, size, row, placed, solutions):

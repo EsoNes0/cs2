@@ -5,6 +5,7 @@
 import unittest
 from structures.binary_tree import BinaryTree
 
+
 class TestBinaryTree(unittest.TestCase):
 
     def test_empty(self):
