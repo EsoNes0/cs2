@@ -70,9 +70,10 @@ class AllQueens:
 
         for col in range(0, size):
             if self.all_safe(row, col, placed):
-                placed = self.solve_one(size, row + 1, placed + [(row, col)])
-                if len(placed) == size:
-                    return placed
+                solution = self.solve_one(size, row + 1, placed + [(row, col)])
+                if len(solution) == size:
+                    return solution
+                
         return []
 
     def solve_all(self, size, row, placed, solutions):
@@ -95,7 +96,7 @@ class AllQueens:
 
 
 if __name__ == "__main__":
-    SIZE = 3 if len(argv) == 1 else int(argv[1])
+    SIZE = 8 if len(argv) == 1 else int(argv[1])
 
     if SOLVE_ONE:
         queen = AllQueens()
