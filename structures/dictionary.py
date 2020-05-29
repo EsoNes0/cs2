@@ -24,6 +24,7 @@ Todo:
 
 class Dictionary:
     """dictionary class with doubling and halfing"""
+
     def __init__(self, init=None):
         self.__limit = 10
         self.__items = [[] for _ in range(self.__limit)]

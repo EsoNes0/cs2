@@ -1,22 +1,11 @@
 # -*- coding: utf-8 -*-
 '''Dijkstra's algorithm implementation
 
-
-A recursive method that takes 1) a string to find, 2) a string to replace
-the found string with, and 3) an initial string. Return the initial string with
-all the found strings replaced with the replacement string. Without using loops
-or the built-in string methods except comparison, length, and slicing.
-
-
 Author: Larsen Close
 Version: Completed through A level work
 Outline and initial tests provided in class by Professor Dr. Beaty at
 MSU Denver
 
-
-Todo:
-    * Make runnable from file
-    * Also also use ``sphinx.ext.todo`` extension
 '''
 
 import sys
@@ -41,7 +30,7 @@ class WeightedDigraph:
             resultant = str(self.value)
             for edge in self.edges:
                 resultant += "->" + str(edge.to_node.value) + \
-                          "(" + str(edge.weight) + ")"
+                    "(" + str(edge.weight) + ")"
             return resultant
 
         def add_edge(self, new_edge):

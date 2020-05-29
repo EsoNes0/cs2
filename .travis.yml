@@ -1,28 +1,28 @@
 dist: xenial
 language: python
 python:
-  - "3.7"
+    - "3.7"
 
 addons:
-  sonarcloud:
-    organization: "$SONAR_ORGANIZATION"
-    token:
-      secure: "$SONAR_TOKEN"
+    sonarcloud:
+        organization: "$SONAR_ORGANIZATION"
+        token:
+            secure: "$SONAR_TOKEN"
 
 before_install:
-  - pip install -U pip
+    - pip install -U pip
 
 install:
-  - pip install -r requirements-dev.txt codecov
+    - pip install -r requirements-dev.txt codecov
 
 script:
-  - pylint cs2 tests
-  - flake8 cs2 tests
-  - coverage erase
-  - coverage run --branch --source=cs2 -m pytest
-  - coverage report -m
-  
+    - pylint structures tests
+    - flake8 structures tests
+    - coverage erase
+    - coverage run --branch --source=structures -m pytest
+    - coverage report -m
+
 after_success:
-  - coverage xml -i
-  - codecov
-  - sonar-scanner -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.organization=${SONAR_ORGANIZATION}
+    - coverage xml -i
+    - codecov
+    - sonar-scanner -Dsonar.projectKey =${SONAR_PROJECT_KEY} -Dsonar.organization =${SONAR_ORGANIZATION}

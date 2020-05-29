@@ -2,10 +2,7 @@
 """Basic tests for linked list"""
 
 import unittest
-from cs2.linked_list import LinkedList
-# pylint: disable=invalid-name
-# pylint: disable=pointless-string-statement
-# pylint: disable=missing-class-docstring
+from structures.linked_list import LinkedList
 
 
 class TestEmpty(unittest.TestCase):
