@@ -3,7 +3,6 @@
 
 import unittest
 from structures.all_queens import AllQueens
-# pylint: disable=invalid-name
 
 
 class Test_Safe(unittest.TestCase):

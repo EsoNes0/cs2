@@ -3,9 +3,6 @@
 
 import unittest
 from structures.recursive_string_replace import findandreplace
-# pylint: disable=invalid-name
-# pylint: disable=pointless-string-statement
-# pylint: disable=missing-class-docstring
 
 
 class TestFindAndReplace(unittest.TestCase):

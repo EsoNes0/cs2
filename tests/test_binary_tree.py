@@ -4,10 +4,6 @@
 
 import unittest
 from structures.binary_tree import BinaryTree
-# pylint: disable=invalid-name
-# pylint: disable=no-self-use
-# pylint: disable=pointless-string-statement
-
 
 class TestBinaryTree(unittest.TestCase):
     """Basic test class for binary tree"""

@@ -3,9 +3,6 @@
 
 import unittest
 from structures.linked_list import LinkedList
-# pylint: disable=invalid-name
-# pylint: disable=pointless-string-statement
-# pylint: disable=missing-class-docstring
 
 
 class TestEmpty(unittest.TestCase):
