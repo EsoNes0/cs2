@@ -65,8 +65,11 @@ class BinaryTree():
     def remove_both_references(self):
 
         next_highest = self.next_highest()
-
         self.remove(next_highest.value)
+
+        if not self.parent:
+            self.value = next_highest.value
+            return
 
         next_highest.left = self.left
         next_highest.right = self.right
