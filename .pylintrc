@@ -572,3 +572,9 @@ min-public-methods=2
 # "BaseException, Exception".
 overgeneral-exceptions=BaseException,
                        Exception
+
+# pylint: disable=invalid-name 
+# pylint: disable=missing-class-docstring
+# pylint: disable=no-self-use
+# pylint: disable=pointless-string-statement
+# pylint: disable=no-value-for-parameter

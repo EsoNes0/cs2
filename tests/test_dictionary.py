@@ -2,9 +2,11 @@
 
 import unittest
 from structures.dictionary import Dictionary
-
+# pylint: disable=invalid-name 
+# pylint: disable=missing-class-docstring
 
 class test_add_two(unittest.TestCase):
+    """Dictionary test class"""
     def test(self):
         """Dictionary test method"""
         s = Dictionary()

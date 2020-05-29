@@ -31,10 +31,7 @@ class AllQueens:
         """AllQueens method to check single safe placement"""
         return not (
             x_1 == x_2 or y_1 == y_2 or abs(
-                x_2 -
-                x_1) == abs(
-                y_2 -
-                y_1))
+                x_2 - x_1) == abs(y_2 - y_1))
 
     def all_safe(self, row, col, placed):
         """AllQueens method to check safety against all placements"""
