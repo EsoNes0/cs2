@@ -51,9 +51,9 @@ class test_all_safe(unittest.TestCase):
         queen = AllQueens()
         self.assertTrue(queen.all_safe(1, 1, [(2, 3), (4, 5)]))
 
+
 class test_one(unittest.TestCase):
     """Basic tests for all queens problem"""
-    
 
     def test_one_one(self):
         """Basic tests for all queens problem"""
