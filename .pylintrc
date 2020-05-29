@@ -1,5 +1,11 @@
 [MASTER]
 
+disable=invalid-name 
+disable=missing-class-docstring
+disable=no-self-use
+disable=pointless-string-statement
+disable=no-value-for-parameter
+
 # A comma-separated list of package or module names from where C extensions may
 # be loaded. Extensions are loading into the active Python interpreter and may
 # run arbitrary code.
@@ -573,8 +579,4 @@ min-public-methods=2
 overgeneral-exceptions=BaseException,
                        Exception
 
-# pylint: disable=invalid-name 
-# pylint: disable=missing-class-docstring
-# pylint: disable=no-self-use
-# pylint: disable=pointless-string-statement
-# pylint: disable=no-value-for-parameter
+
