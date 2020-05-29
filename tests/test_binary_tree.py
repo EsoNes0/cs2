@@ -8,6 +8,7 @@ from structures.binary_tree import BinaryTree
 class TestBinaryTree(unittest.TestCase):
     """Basic test class for binary tree"""
 
+
     def test_empty(self):
         """Basic test method for binary tree"""
         self.assertTrue(BinaryTree().empty())

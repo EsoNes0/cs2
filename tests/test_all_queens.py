@@ -53,6 +53,7 @@ class test_all_safe(unittest.TestCase):
 
 class test_one(unittest.TestCase):
     """Basic tests for all queens problem"""
+    
 
     def test_one_one(self):
         """Basic tests for all queens problem"""

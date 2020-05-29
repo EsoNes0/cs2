@@ -5,6 +5,7 @@ from structures.dictionary import Dictionary
 
 class test_add_two(unittest.TestCase):
     """Dictionary test class"""
+    
     def test(self):
         """Dictionary test method"""
         s = Dictionary()

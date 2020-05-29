@@ -19,7 +19,7 @@ script:
     - pylint structures tests
     - flake8 structures tests
     - coverage erase
-    - coverage run --branch --source = structures -m pytest
+    - coverage run --branch --source=structures -m pytest
     - coverage report -m
 
 after_success:

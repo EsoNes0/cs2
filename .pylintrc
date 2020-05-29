@@ -144,7 +144,8 @@ disable=print-statement,
         missing-class-docstring,
         no-self-use,
         pointless-string-statement,
-        no-value-for-parameter
+        no-value-for-parameter,
+        missing-function-docstring
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option
